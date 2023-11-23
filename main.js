@@ -1,7 +1,8 @@
 let form = document.getElementById("form")
 
 if (localStorage.getItem("username") && localStorage.getItem("password")) {
-
+          document.getElementById("username").value = localStorage.getItem("username")
+          document.getElementById("password").value = localStorage.getItem("password")
 }
 
 form.addEventListener("submit", e => {
@@ -12,4 +13,8 @@ form.addEventListener("submit", e => {
 
           localStorage.setItem("username", JSON.stringify(username))
           localStorage.setItem("password", JSON.stringify(password))
+})
+
+document.getElementById("clear-button").addEventListener("click", () => {
+          localStorage.clear()
 })
